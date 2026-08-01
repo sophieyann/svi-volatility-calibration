@@ -13,19 +13,19 @@ The dataset contains 42,160 valid option observations across 103 daily snapshots
 3. Removed invalid implied volatilities, ITM-side observations, and extreme log-moneyness values.
 4. Converted implied volatility to total variance:
    
-   \[
-   w = \sigma_{\text{imp}}^2 T
-   \]
+```math
+w = \sigma_{\mathrm{imp}}^2 T
+```
 
-5. Calibrated the raw SVI model:
+6. Calibrated the raw SVI model:
 
-   \[
-   w(k)=a+b\left[\rho(k-m)+\sqrt{(k-m)^2+\sigma^2}\right]
-   \]
+```math
+w(k)=a+b\left[\rho(k-m)+\sqrt{(k-m)^2+\sigma^2}\right]
+```
 
-6. Used vega-squared weights and multi-start nonlinear optimization.
-7. Jointly fitted all snapshots with a ridge penalty on standardized parameter changes.
-8. Tested ridge strengths of 0, 0.01, 0.1, 1, and 10.
+7. Used vega-squared weights and multi-start nonlinear optimization.
+8. Jointly fitted all snapshots with a ridge penalty on standardized parameter changes.
+9. Tested ridge strengths of 0, 0.01, 0.1, 1, and 10.
 
 ## Key Results
 
